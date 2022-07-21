@@ -47,6 +47,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4302845C28893969002E5C69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43E9E8D028880D2300BF03B7 /* AppDelegate.swift */,
+				43E9E8D228880D2300BF03B7 /* SceneDelegate.swift */,
+				43E9E8D928880D2400BF03B7 /* Assets.xcassets */,
+				43E9E8DE28880D2400BF03B7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4302845E28893979002E5C69 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43E9E8D428880D2300BF03B7 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4302845F2889397C002E5C69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43E9E8D628880D2300BF03B7 /* Main.storyboard */,
+				43E9E8DB28880D2400BF03B7 /* LaunchScreen.storyboard */,
+				43E9E8EF28880F7300BF03B7 /* AskCell.swift */,
+				43E9E8ED28880F6D00BF03B7 /* ConversationCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4302846028893985002E5C69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43E9E8E528880D5900BF03B7 /* Message.swift */,
+				43E9E8E828880D8600BF03B7 /* ConversationDelegate.swift */,
+				43E9E8EA28880DA000BF03B7 /* ConversationDataSource.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		43E9E8C428880D2300BF03B7 = {
 			isa = PBXGroup;
 			children = (
@@ -66,44 +106,12 @@
 		43E9E8CF28880D2300BF03B7 /* DLAMSD01_AppointmentBot */ = {
 			isa = PBXGroup;
 			children = (
-				43E9E8E728880D7100BF03B7 /* Model */,
-				43E9E8D028880D2300BF03B7 /* AppDelegate.swift */,
-				43E9E8D228880D2300BF03B7 /* SceneDelegate.swift */,
-				43E9E8E428880D4100BF03B7 /* Controller */,
-				43E9E8EC28880DC500BF03B7 /* View */,
-				43E9E8D928880D2400BF03B7 /* Assets.xcassets */,
-				43E9E8DE28880D2400BF03B7 /* Info.plist */,
-				43E9E8D628880D2300BF03B7 /* Main.storyboard */,
-				43E9E8DB28880D2400BF03B7 /* LaunchScreen.storyboard */,
-				43E9E8D428880D2300BF03B7 /* ViewController.swift */,
+				4302846028893985002E5C69 /* Model */,
+				4302845F2889397C002E5C69 /* View */,
+				4302845E28893979002E5C69 /* Controllers */,
+				4302845C28893969002E5C69 /* Supporting Files */,
 			);
 			path = DLAMSD01_AppointmentBot;
-			sourceTree = "<group>";
-		};
-		43E9E8E428880D4100BF03B7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		43E9E8E728880D7100BF03B7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				43E9E8E528880D5900BF03B7 /* Message.swift */,
-				43E9E8E828880D8600BF03B7 /* ConversationDelegate.swift */,
-				43E9E8EA28880DA000BF03B7 /* ConversationDataSource.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		43E9E8EC28880DC500BF03B7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				43E9E8ED28880F6D00BF03B7 /* ConversationCell.swift */,
-				43E9E8EF28880F7300BF03B7 /* AskCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
