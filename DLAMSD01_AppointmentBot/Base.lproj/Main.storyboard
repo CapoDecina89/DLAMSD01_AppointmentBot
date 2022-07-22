@@ -19,21 +19,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="25i-TC-Vxx">
-                                <rect key="frame" x="0.0" y="44" width="390" height="466"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9H-Aw-IKx">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="32.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfw-fS-YIp">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="32.333333333333336"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtI-B9-wPi">
+                                                <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" text="Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfw-fS-YIp">
+                                                        <rect key="frame" x="15" y="9" width="133.66666666666666" height="32.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Gfw-fS-YIp" firstAttribute="leading" secondItem="GtI-B9-wPi" secondAttribute="leading" constant="15" id="4lL-bJ-WhI"/>
+                                                    <constraint firstItem="Gfw-fS-YIp" firstAttribute="centerY" secondItem="GtI-B9-wPi" secondAttribute="centerY" id="PTK-71-nyf"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="WSW-B8-NsC"/>
+                                        </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-hn-ruP">
-                                        <rect key="frame" x="0.0" y="32.333333333333314" width="390" height="403"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="682"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Answer" id="c6U-dT-57W" userLabel="Answer" customClass="ConversationCell" customModule="DLAMSD01_AppointmentBot" customModuleProvider="target">
@@ -49,6 +62,11 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerradius">
+                                                                    <real key="value" value="13"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QT-xI-aGw" userLabel="dateLabel">
                                                             <rect key="frame" x="15" y="4.0000000000000009" width="74.666666666666671" height="13.333333333333336"/>
@@ -69,6 +87,11 @@
                                                         <outlet property="messageLabel" destination="TJn-Di-Rnk" id="pgX-Nl-yyD"/>
                                                     </connections>
                                                 </tableViewCellContentView>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Question" id="oro-XQ-esT" userLabel="Question" customClass="ConversationCell" customModule="DLAMSD01_AppointmentBot" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="88.333333969116211" width="390" height="43.666667938232422"/>
@@ -83,6 +106,11 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerradius">
+                                                                    <real key="value" value="13"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYG-uf-Vdk" userLabel="dateLabel">
                                                             <rect key="frame" x="300.33333333333331" y="4.0000000000000009" width="74.666666666666686" height="13.333333333333336"/>
@@ -99,6 +127,11 @@
                                                         <constraint firstItem="PYG-uf-Vdk" firstAttribute="top" secondItem="gcB-Ex-lET" secondAttribute="top" constant="4" id="qqv-xe-zDk"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Thinking" id="neR-2Y-OLV" userLabel="Thinking" customClass="ThinkingCell" customModule="DLAMSD01_AppointmentBot" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="132.00000190734863" width="390" height="43.666667938232422"/>
@@ -123,10 +156,10 @@
                                         </prototypes>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jaH-Mk-NEF">
-                                        <rect key="frame" x="0.0" y="435.33333333333331" width="390" height="30.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="732" width="390" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type here..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="es0-ax-bft" userLabel="Text Field">
-                                                <rect key="frame" x="0.0" y="0.0" width="349.33333333333331" height="30.666666666666668"/>
+                                            <textField opaque="NO" contentMode="center" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type here..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="es0-ax-bft" userLabel="Text Field">
+                                                <rect key="frame" x="0.0" y="0.0" width="349.33333333333331" height="34"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -136,7 +169,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20U-Vo-zvb">
-                                                <rect key="frame" x="359.33333333333331" y="0.0" width="30.666666666666686" height="30.666666666666668"/>
+                                                <rect key="frame" x="359.33333333333331" y="0.0" width="30.666666666666686" height="34"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" imagePadding="10" cornerStyle="capsule">
                                                     <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="default"/>
@@ -153,6 +186,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="UUa-hn-ruP" firstAttribute="top" secondItem="M9H-Aw-IKx" secondAttribute="bottom" id="Kah-4n-sVl"/>
+                                    <constraint firstItem="M9H-Aw-IKx" firstAttribute="top" secondItem="25i-TC-Vxx" secondAttribute="top" id="OUI-gZ-d2y"/>
+                                    <constraint firstItem="jaH-Mk-NEF" firstAttribute="bottom" secondItem="25i-TC-Vxx" secondAttribute="bottom" id="aog-OU-Izf"/>
                                     <constraint firstItem="jaH-Mk-NEF" firstAttribute="top" secondItem="UUa-hn-ruP" secondAttribute="bottom" id="f1Q-RX-SVJ"/>
                                 </constraints>
                             </stackView>
@@ -160,7 +195,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="25i-TC-Vxx" secondAttribute="bottom" constant="300" id="1X7-LG-CcL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="25i-TC-Vxx" secondAttribute="bottom" id="1X7-LG-CcL"/>
                             <constraint firstItem="25i-TC-Vxx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Gm-MT-YWp"/>
                             <constraint firstItem="25i-TC-Vxx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nlq-S9-z50"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="25i-TC-Vxx" secondAttribute="trailing" id="rtT-m9-a9w"/>

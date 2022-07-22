@@ -34,7 +34,7 @@ class ConversationDelegate {
             return "We are open:/nMo - Fr 0800 - 1700"
         }
         //Path Direction
-        else if lowerQuestion.contains("where") || lowerQuestion.contains("find") {
+        else if lowerQuestion.hasPrefix("where") || lowerQuestion.contains("find") {
             return "One Apple Park Way, Cupertino, CA 95014"
         }else {
             return "Would you like to contact our reception?"
