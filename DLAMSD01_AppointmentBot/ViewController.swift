@@ -16,10 +16,7 @@ class ViewController: UIViewController {
     let questionAnswerer = ConversationDelegate()
     let conversationSource = ConversationDataSource()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    
     @IBAction func userInputChanged(_ sender: Any) {
         if userInput.text!.isEmpty == true  {
             sendButton.isEnabled = false
@@ -29,13 +26,20 @@ class ViewController: UIViewController {
     }
         
     @IBAction func sendButtonPressed(_ sender: Any) {
-        let text = userInput.text
+        let text = userInput.text ?? ""
         userInput.text = nil
+        respondeToQuestion(text)
+        sendButton.isEnabled = false
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
     ///called when the user enters a question
-    func respondeTo(_ text: String) {
+    func respondeToQuestion(_ text: String) {
         //add body
     }
 }
@@ -50,7 +54,7 @@ extension ViewController: UITextFieldDelegate {
         // Clear out the text
         userInput.text = nil
         // Deal with the question
-       respondeTo(text)
+       respondeToQuestion(text)
         return false
     }
     ///clears testfield after editings starts
