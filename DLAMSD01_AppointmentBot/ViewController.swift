@@ -63,7 +63,7 @@ extension ViewController: UITextFieldDelegate {
        respondeToQuestion(text)
         return false
     }
-    ///pins the  typeBar to the top of the keyboard
+    ///runs if userInput is edited
     func textFieldDidBeginEditing(_ userinput: UITextField) {
         // Clear out the text
         userInput.text = nil
