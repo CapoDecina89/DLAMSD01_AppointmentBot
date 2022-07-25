@@ -15,6 +15,8 @@ class ConversationCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
+    
+    ///fills labels with message attributes
     func configureWithMessage(_ message: Message) {
         dateLabel.text = dateFormatter.string(from: message.date as Date)
         messageLabel.text = message.text
