@@ -195,7 +195,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="25i-TC-Vxx" secondAttribute="bottom" id="1X7-LG-CcL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="25i-TC-Vxx" secondAttribute="bottom" placeholder="YES" id="1X7-LG-CcL"/>
                             <constraint firstItem="25i-TC-Vxx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Gm-MT-YWp"/>
                             <constraint firstItem="25i-TC-Vxx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nlq-S9-z50"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="25i-TC-Vxx" secondAttribute="trailing" id="rtT-m9-a9w"/>
@@ -203,6 +203,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="body" destination="25i-TC-Vxx" id="sTt-xv-KhK"/>
                         <outlet property="sendButton" destination="20U-Vo-zvb" id="Y64-cn-Zfi"/>
                         <outlet property="userInput" destination="es0-ax-bft" id="kUW-IG-Zjl"/>
                     </connections>

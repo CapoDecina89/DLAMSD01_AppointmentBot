@@ -10,8 +10,10 @@ import UIKit
 class ViewController: UIViewController {
 
    
+    @IBOutlet weak var body: UIStackView!
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+
     
     let questionAnswerer = ConversationDelegate()
     let conversationSource = ConversationDataSource()
@@ -34,27 +36,12 @@ class ViewController: UIViewController {
         
         
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        // call the 'keyboardWillShow' function when the view controller receive the notification that a keyboard is going to be shown
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keybordWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc func keybordWillShow(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else{
-            return
-        }
-        self.view.frame.origin.y = 0 - keyboardSize.height
-     
-    }
-    @objc func keyboardWillHide(notification: NSNotification) {
-      // move back the root view origin to zero
-      table.view.frame.origin.y = 0
+        //pin userInput to top of the keyboard
+        body.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
     }
     
     ///called when the user enters a question
@@ -76,10 +63,11 @@ extension ViewController: UITextFieldDelegate {
        respondeToQuestion(text)
         return false
     }
-    ///clears testfield after editings starts
+    ///pins the  typeBar to the top of the keyboard
     func textFieldDidBeginEditing(_ userinput: UITextField) {
         // Clear out the text
         userInput.text = nil
+        
     }
 
 //MARK: Table view datasource
