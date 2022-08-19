@@ -1,6 +1,6 @@
 import UIKit
 
-private var dateFormatter: DateFormatter = {
+private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.doesRelativeDateFormatting = true
     formatter.timeStyle = .short
