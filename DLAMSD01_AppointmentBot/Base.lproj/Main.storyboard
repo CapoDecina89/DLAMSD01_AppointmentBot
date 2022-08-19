@@ -170,10 +170,10 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="w0C-mv-tGu"/>
                                         </connections>
                                     </tableView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jaH-Mk-NEF">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jaH-Mk-NEF">
                                         <rect key="frame" x="0.0" y="732" width="390" height="34"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="center" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type here..." borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="es0-ax-bft" userLabel="Text Field">
+                                            <textField opaque="NO" contentMode="center" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="es0-ax-bft" userLabel="Text Field">
                                                 <rect key="frame" x="0.0" y="0.0" width="349.33333333333331" height="34"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -183,7 +183,7 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="HAZ-7x-GHo"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20U-Vo-zvb">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20U-Vo-zvb">
                                                 <rect key="frame" x="359.33333333333331" y="0.0" width="30.666666666666686" height="34"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" imagePadding="10" cornerStyle="capsule">
@@ -195,8 +195,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="20U-Vo-zvb" secondAttribute="trailing" id="bhF-xQ-Djg"/>
-                                            <constraint firstItem="20U-Vo-zvb" firstAttribute="leading" secondItem="es0-ax-bft" secondAttribute="trailing" constant="10" id="vBd-wJ-An6"/>
+                                            <constraint firstItem="20U-Vo-zvb" firstAttribute="leading" secondItem="es0-ax-bft" secondAttribute="trailing" constant="10" id="QXb-Bw-Wdp"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
