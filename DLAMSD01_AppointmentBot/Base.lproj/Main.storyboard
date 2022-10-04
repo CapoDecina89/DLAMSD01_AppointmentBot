@@ -105,17 +105,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="46"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uof-6n-Bk7" userLabel="messageLabel">
+                                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uof-6n-Bk7" userLabel="messageLabel">
                                                             <rect key="frame" x="306.33333333333331" y="21.333333333333329" width="68.666666666666686" height="20.666666666666671"/>
                                                             <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerradius">
-                                                                    <real key="value" value="13"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYG-uf-Vdk" userLabel="dateLabel">
                                                             <rect key="frame" x="300.33333333333331" y="4.0000000000000009" width="74.666666666666686" height="13.333333333333336"/>
@@ -171,6 +166,7 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="w0C-mv-tGu"/>
                                         </connections>
                                     </tableView>
+
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xlM-TV-AAy">
                                         <rect key="frame" x="0.0" y="719" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
