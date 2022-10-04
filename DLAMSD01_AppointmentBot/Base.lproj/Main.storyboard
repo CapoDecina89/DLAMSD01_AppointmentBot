@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="25i-TC-Vxx">
-                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9H-Aw-IKx">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
@@ -47,11 +47,12 @@
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-hn-ruP">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="682"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="separatorColor" systemColor="systemGray4Color"/>
                                         <prototypes>
                                             <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Answer" id="c6U-dT-57W" userLabel="Answer" customClass="ConversationCell" customModule="DLAMSD01_AppointmentBot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="46"/>
+                                                <rect key="frame" x="0.0" y="50" width="390" height="46"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c6U-dT-57W" id="M1P-aw-m1W">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="46"/>
@@ -98,7 +99,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Question" id="oro-XQ-esT" userLabel="Question" customClass="ConversationCell" customModule="DLAMSD01_AppointmentBot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="90.666666030883789" width="390" height="46"/>
+                                                <rect key="frame" x="0.0" y="96" width="390" height="46"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oro-XQ-esT" id="gcB-Ex-lET">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="46"/>
@@ -145,7 +146,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Thinking" id="neR-2Y-OLV" userLabel="Thinking" customClass="ThinkingCell" customModule="DLAMSD01_AppointmentBot" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="136.66666603088379" width="390" height="43.666667938232422"/>
+                                                <rect key="frame" x="0.0" y="142" width="390" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="neR-2Y-OLV" id="6cn-vH-BAY">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
@@ -170,40 +171,44 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="w0C-mv-tGu"/>
                                         </connections>
                                     </tableView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jaH-Mk-NEF">
-                                        <rect key="frame" x="0.0" y="732" width="390" height="34"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="center" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="es0-ax-bft" userLabel="Text Field">
-                                                <rect key="frame" x="0.0" y="0.0" width="349.33333333333331" height="34"/>
-                                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="userInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="l3C-ef-8pW"/>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="HAZ-7x-GHo"/>
-                                                </connections>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20U-Vo-zvb">
-                                                <rect key="frame" x="359.33333333333331" y="0.0" width="30.666666666666686" height="34"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" imagePadding="10" cornerStyle="capsule">
-                                                    <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="default"/>
-                                                </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oc0-X7-EZe"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="20U-Vo-zvb" firstAttribute="leading" secondItem="es0-ax-bft" secondAttribute="trailing" constant="10" id="QXb-Bw-Wdp"/>
-                                        </constraints>
-                                    </stackView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xlM-TV-AAy">
+                                        <rect key="frame" x="0.0" y="719" width="390" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <items>
+                                            <barButtonItem style="plain" id="qZT-bu-OZn">
+                                                <textField key="customView" opaque="NO" contentMode="center" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here..." textAlignment="natural" minimumFontSize="17" id="es0-ax-bft" userLabel="Text Field">
+                                                    <rect key="frame" x="16" y="5" width="330" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="userInputChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="l3C-ef-8pW"/>
+                                                        <outlet property="delegate" destination="BYZ-38-t0r" id="HAZ-7x-GHo"/>
+                                                    </connections>
+                                                </textField>
+                                            </barButtonItem>
+                                            <barButtonItem width="7" style="plain" systemItem="fixedSpace" id="C1D-11-8Pn"/>
+                                            <barButtonItem enabled="NO" width="390" style="plain" id="i41-ey-7QD">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="20U-Vo-zvb">
+                                                    <rect key="frame" x="353" y="5" width="34.333333333333314" height="34.333333333333336"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" imagePadding="10" cornerStyle="capsule">
+                                                        <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="default"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o5l-14-JJi"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstItem="UUa-hn-ruP" firstAttribute="top" secondItem="M9H-Aw-IKx" secondAttribute="bottom" id="Kah-4n-sVl"/>
                                     <constraint firstItem="M9H-Aw-IKx" firstAttribute="top" secondItem="25i-TC-Vxx" secondAttribute="top" id="OUI-gZ-d2y"/>
-                                    <constraint firstItem="jaH-Mk-NEF" firstAttribute="bottom" secondItem="25i-TC-Vxx" secondAttribute="bottom" id="aog-OU-Izf"/>
-                                    <constraint firstItem="jaH-Mk-NEF" firstAttribute="top" secondItem="UUa-hn-ruP" secondAttribute="bottom" id="f1Q-RX-SVJ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -219,7 +224,7 @@
                     </view>
                     <connections>
                         <outlet property="body" destination="25i-TC-Vxx" id="sTt-xv-KhK"/>
-                        <outlet property="sendButton" destination="20U-Vo-zvb" id="Y64-cn-Zfi"/>
+                        <outlet property="sendButton" destination="i41-ey-7QD" id="Bid-0c-0A3"/>
                         <outlet property="tableView" destination="UUa-hn-ruP" id="2dI-nf-qUY"/>
                         <outlet property="userInput" destination="es0-ax-bft" id="kUW-IG-Zjl"/>
                     </connections>
@@ -230,7 +235,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <image name="thinking1" width="40" height="10"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -240,6 +245,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
