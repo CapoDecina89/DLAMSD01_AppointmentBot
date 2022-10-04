@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var body: UIStackView!
     @IBOutlet weak var userInput: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var sendButton: UIBarButtonItem!
    
     
     let questionAnswerer = ConversationDelegate()
