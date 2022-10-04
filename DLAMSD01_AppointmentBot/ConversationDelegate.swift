@@ -7,40 +7,37 @@
 
 import Foundation
 import NaturalLanguage
+
 class ConversationDelegate {
     
     ///Checks the questions language
     func checkLanguage(question: String) -> NLLanguage {
-        let lowerQuestion = question.lowercased()
-        let recognizer = NLLanguageRecognizer()
-        
-        recognizer.processString(lowerQuestion)
-        return recognizer.dominantLanguage!
+        return NLLanguageRecognizer.dominantLanguage(for: question) ?? NLLanguage.undetermined
         
     }
     
-    /// Creates an answer in response to a question.
+    /// Creates an answer message in response to a question.
     func responseTo(question: String) -> String {
         let lowerQuestion = question.lowercased()
         
-        
-            
-        if lowerQuestion.hasPrefix("hello") {
-            return "Why, hello there!"
-        } else if lowerQuestion == "where are the cookies?" {
-            return "In the cookie jar!"
-        } else if lowerQuestion.hasPrefix("where") {
-            return "To the North!"
-        } else {
-            let defaultNumber = question.count % 3
-
-            if defaultNumber == 0 {
-                return "That really depends"
-            } else if defaultNumber == 1 {
-                return "I think so, yes"
-            } else {
-                return "Ask me again tomorrow"
-            }
+        //review: argument label
+        if checkLanguage(question: question) != NLLanguage.english{
+            return "Please ask me in English. 🇬🇧"
+        }
+        //Path appointment
+        else if lowerQuestion.contains("appointment") {
+            return "Sure. I can help you with your appointment./nWould you like to have info on your next appointment, make a new appointment or reschedule an existing?"
+            //insert cases: next, new and reschedule
+        }
+        //Path opening hours
+        else if lowerQuestion.contains("open") {
+            return "We are open:/nMo - Fr 0800 - 1700"
+        }
+        //Path Direction
+        else if lowerQuestion.hasPrefix("where") || lowerQuestion.contains("find") {
+            return "One Apple Park Way, Cupertino, CA 95014"
+        }else {
+            return "Would you like to contact our reception?"
         }
     }
 }
