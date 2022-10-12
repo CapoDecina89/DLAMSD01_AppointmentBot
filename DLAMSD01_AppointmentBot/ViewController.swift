@@ -68,7 +68,6 @@ class ViewController: UIViewController, UITableViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + thinkingTime) {
             // It's now OK to ask another question
             self.isThinking = false
-            self.sendButton.isEnabled = true
             // Get an answer from the question answerer
             let answer = self.questionAnswerer.responseTo(question:  text)
             // As before, check that adding an answer actually increases the message count
