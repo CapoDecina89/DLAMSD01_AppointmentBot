@@ -33,13 +33,13 @@ class ConversationDelegate {
                 return "Hey there. Which question can I answer for you?"
                 
             case .misc:
-                return "Sure. I can help you with your appointment.\nWould you like to have info on your next appointment, make a new appointment or reschedule an existing?"
+                return "Our reception can help you with this matter.\n Please call: +491234567890"
             
             case .location:
                 return "One Apple Park Way, Cupertino, CA 95014"
             
             case .appointment:
-                return "Your next appointment is due \(dateFormatter.string(from: Date(timeIntervalSinceNow: 259200)))."
+                return "Your next appointment is due \(dateFormatter.string(from: Date(timeIntervalSinceNow: 259200))).\nFor changes please call: +491234567890"
             
             case .opening:
                 return "We are open:\nMo - Fr 08:00 - 17:00"
@@ -66,7 +66,8 @@ class ConversationDelegate {
                               "appointment_2" : "I would like to reschedule my appointment.",
                               "appointment_3" : "I have to cancel my appointment.",
                               "greeting_1" : "Hi.",
-                              "greeting_2" : "How are you?"
+                              "greeting_2" : "How are you?",
+                              "greeting_3" : "Hey!"
         ]
         var answerKey: String = ""
         var answerDistance = 2.0

@@ -9,20 +9,16 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate {
 
-   
+    let questionAnswerer = ConversationDelegate()
+    let conversationSource = ConversationDataSource()
+    fileprivate var isThinking = false
+    private let thinkingTime : TimeInterval = 2
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var body: UIStackView!
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var sendButton: UIBarButtonItem!
-   
-    
-    let questionAnswerer = ConversationDelegate()
-    let conversationSource = ConversationDataSource()
-    
-    fileprivate var isThinking = false
-    private let thinkingTime : TimeInterval = 2
-    
-    
+       
     @IBAction func userInputChanged(_ sender: Any) {
         if userInput.text!.isEmpty == true  {
             sendButton.isEnabled = false
@@ -44,16 +40,18 @@ class ViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //pin userInput to top of the keyboard
+        // pin userInput to top of the keyboard
         body.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
         tableView.dataSource = self
         tableView.delegate = self
+        
     }
     
     ///called when the user enters a question
     func respondeToQuestion(_ text: String) {
         //blocks new questions while the app is thinking
         isThinking = true
+        sendButton.isEnabled = false
         //checks whether the count of messages changes before adding a new row
         let countBeforeAdding = conversationSource.messageCount
         conversationSource.add(question: text)
@@ -70,6 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + thinkingTime) {
             // It's now OK to ask another question
             self.isThinking = false
+            self.sendButton.isEnabled = true
             // Get an answer from the question answerer
             let answer = self.questionAnswerer.responseTo(question:  text)
             // As before, check that adding an answer actually increases the message count
@@ -99,10 +98,15 @@ extension ViewController: UITextFieldDelegate {
         guard let text = userInput.text else {
             return false
         }
+        //if App is thinking return do nothing
+        if isThinking {
+            return false
+        }
         // Clear out the text
         userInput.text = nil
         // Deal with the question
-       respondeToQuestion(text)
+        respondeToQuestion(text)
+        sendButton.isEnabled = false
         return false
     }
     ///runs if userInput is edited

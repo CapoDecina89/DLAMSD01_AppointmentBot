@@ -166,7 +166,6 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="w0C-mv-tGu"/>
                                         </connections>
                                     </tableView>
-
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="xlM-TV-AAy">
                                         <rect key="frame" x="0.0" y="719" width="390" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
