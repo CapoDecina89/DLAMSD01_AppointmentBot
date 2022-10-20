@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var sendButton: UIBarButtonItem!
        
+    ///activates when the content of the userInput is changed. if textfield is empty -> sendButton: disabled, if not emtpy -> sendButton: enabled
     @IBAction func userInputChanged(_ sender: Any) {
         if userInput.text!.isEmpty == true  {
             sendButton.isEnabled = false
@@ -26,15 +27,13 @@ class ViewController: UIViewController, UITableViewDelegate {
             sendButton.isEnabled = true
         }
     }
-        
+    ///activates when sendButton is pressed -> saves text and resets userInput
     @IBAction func sendButtonPressed(_ sender: Any) {
         let text = userInput.text ?? ""
         userInput.text = nil
-        respondeToQuestion(text)
+        respondeTo(question: text)
         sendButton.isEnabled = false
         userInput.resignFirstResponder()
-        
-        
     }
    
     override func viewDidLoad() {
@@ -44,11 +43,9 @@ class ViewController: UIViewController, UITableViewDelegate {
         body.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
         tableView.dataSource = self
         tableView.delegate = self
-        
     }
-    
     ///called when the user enters a question
-    func respondeToQuestion(_ text: String) {
+    func respondeTo(question text: String) {
         //blocks new questions while the app is thinking
         isThinking = true
         sendButton.isEnabled = false
@@ -61,26 +58,26 @@ class ViewController: UIViewController, UITableViewDelegate {
         if countBeforeAdding != count {
             questionPath = IndexPath(row: count - 1, section: ConversationSection.history.rawValue)
         }
-        // Inserts a row for the thinking cell, and for the newly added question (if that exists)
+        //Inserts a row for the thinking cell, and for the newly added question (if that exists)
         tableView.insertRows(at: [questionPath, ConversationSection.thinkingPath].compactMap { $0 }, with: .bottom)
         tableView.scrollToRow(at: ConversationSection.thinkingPath, at: .bottom, animated: true)
         // Waits for the thinking time to elapse before adding the answer
         DispatchQueue.main.asyncAfter(deadline: .now() + thinkingTime) {
-            // It's now OK to ask another question
+            //It's now OK to ask another question
             self.isThinking = false
-            // Get an answer from the question answerer
+            //Get an answer from the questionAnswerer
             let answer = self.questionAnswerer.responseTo(question:  text)
-            // As before, check that adding an answer actually increases the message count
+            //As before, check that adding an answer actually increases the message count
             let countBefore = self.conversationSource.messageCount
             self.conversationSource.add(answer: answer)
             let count = self.conversationSource.messageCount
-            // Several updates are happening to the table so they are grouped inside begin / end updates calls
+            //Several updates are happening to the table so they are grouped inside begin / end updates calls
             self.tableView.beginUpdates()
-            // Add the answer cell, if applicable
+            //Add the answer cell, if applicable
             if count != countBefore {
                 self.tableView.insertRows(at: [IndexPath(row:count - 1, section: ConversationSection.history.rawValue)], with: .fade)
             }
-            // Delete the thinking cell
+            //Delete the thinking cell
             self.tableView.deleteRows(at: [ConversationSection.thinkingPath], with: .fade)
             self.tableView.endUpdates()
         }
@@ -104,7 +101,7 @@ extension ViewController: UITextFieldDelegate {
         // Clear out the text
         userInput.text = nil
         // Deal with the question
-        respondeToQuestion(text)
+        respondeTo(question: text)
         sendButton.isEnabled = false
         return false
     }

@@ -33,13 +33,13 @@ class ConversationDelegate {
                 return "Hey there. Which question can I answer for you?"
                 
             case .misc:
-                return "Our reception can help you with this matter.\n Please call: +491234567890"
+                return "Our reception can help you with this matter.\nPlease call: +491234567890"
             
             case .location:
                 return "One Apple Park Way, Cupertino, CA 95014"
             
             case .appointment:
-                return "Your next appointment is due \(dateFormatter.string(from: Date(timeIntervalSinceNow: 259200))).\nFor changes please call: +491234567890"
+                return "Your next appointment is arranged for \(dateFormatter.string(from: Date(timeIntervalSinceNow: 259200))).\nFor changes please call: +491234567890"
             
             case .opening:
                 return "We are open:\nMo - Fr 08:00 - 17:00"
@@ -79,7 +79,7 @@ class ConversationDelegate {
                 answerDistance = distance
             }
         }
-        if answerDistance > 1.0 {
+        if answerDistance > 0.9 {
             answerKey = "misc"
         }
         return answerKey

@@ -22,9 +22,7 @@
 
 /* Begin PBXFileReference section */
 		43028469288A9675002E5C69 /* ThinkingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkingCell.swift; sourceTree = "<group>"; };
-		43D0C1BB28DB96BF000B6304 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		43D0C1C628E6CC55000B6304 /* SentenceEmbedding.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SentenceEmbedding.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		43D0C1CB28E6D7CF000B6304 /* MyPlayground2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		43E9E8CD28880D2300BF03B7 /* DLAMSD01_AppointmentBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLAMSD01_AppointmentBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E9E8D028880D2300BF03B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43E9E8D228880D2300BF03B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,13 +107,11 @@
 		43E9E8CF28880D2300BF03B7 /* DLAMSD01_AppointmentBot */ = {
 			isa = PBXGroup;
 			children = (
-				43D0C1BB28DB96BF000B6304 /* MyPlayground.playground */,
 				4302846028893985002E5C69 /* Model */,
 				4302845F2889397C002E5C69 /* View */,
 				4302845E28893979002E5C69 /* Controllers */,
 				4302845C28893969002E5C69 /* Supporting Files */,
 				43D0C1C628E6CC55000B6304 /* SentenceEmbedding.playground */,
-				43D0C1CB28E6D7CF000B6304 /* MyPlayground2.playground */,
 			);
 			path = DLAMSD01_AppointmentBot;
 			sourceTree = "<group>";

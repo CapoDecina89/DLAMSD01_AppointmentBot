@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="25i-TC-Vxx">
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="25i-TC-Vxx">
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9H-Aw-IKx">
@@ -46,7 +46,7 @@
                                             <constraint firstAttribute="height" constant="50" id="WSW-B8-NsC"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-hn-ruP">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-hn-ruP">
                                         <rect key="frame" x="0.0" y="50" width="390" height="669"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="separatorColor" systemColor="systemGray4Color"/>
@@ -64,15 +64,16 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ1-0x-Ww7" userLabel="messageView">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MJ1-0x-Ww7" userLabel="messageView">
                                                             <rect key="frame" x="15" y="21.333333333333329" width="10" height="33"/>
                                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                                             <accessibility key="accessibilityConfiguration">
-                                                                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                                                <accessibilityTraits key="traits" staticText="YES"/>
                                                             </accessibility>
                                                             <color key="textColor" systemColor="labelColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                         </textView>
                                                     </subviews>
                                                     <constraints>
@@ -104,7 +105,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDd-rg-Nj0" userLabel="messageView">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IDd-rg-Nj0" userLabel="messageView">
                                                             <rect key="frame" x="365" y="21.333333333333329" width="10" height="33"/>
                                                             <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                             <accessibility key="accessibilityConfiguration">
@@ -113,6 +114,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                                         </textView>
                                                     </subviews>
                                                     <constraints>
@@ -139,12 +141,12 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thinking1" translatesAutoresizingMaskIntoConstraints="NO" id="HeD-ig-TdG">
-                                                            <rect key="frame" x="8" y="17" width="40" height="10"/>
+                                                            <rect key="frame" x="15" y="17" width="40" height="10"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="HeD-ig-TdG" firstAttribute="centerY" secondItem="6cn-vH-BAY" secondAttribute="centerY" id="NO7-wz-Uak"/>
-                                                        <constraint firstItem="HeD-ig-TdG" firstAttribute="leading" secondItem="6cn-vH-BAY" secondAttribute="leading" constant="8" id="RHP-ip-up3"/>
+                                                        <constraint firstItem="HeD-ig-TdG" firstAttribute="leading" secondItem="6cn-vH-BAY" secondAttribute="leading" constant="15" id="RHP-ip-up3"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -195,10 +197,12 @@
                                 <constraints>
                                     <constraint firstItem="UUa-hn-ruP" firstAttribute="top" secondItem="M9H-Aw-IKx" secondAttribute="bottom" id="Kah-4n-sVl"/>
                                     <constraint firstItem="M9H-Aw-IKx" firstAttribute="top" secondItem="25i-TC-Vxx" secondAttribute="top" id="OUI-gZ-d2y"/>
+                                    <constraint firstItem="UUa-hn-ruP" firstAttribute="bottom" secondItem="xlM-TV-AAy" secondAttribute="top" id="Znr-V6-LFq"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <keyboardLayoutGuide key="keyboard" id="0Qp-nx-rJe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="25i-TC-Vxx" secondAttribute="bottom" placeholder="YES" id="1X7-LG-CcL"/>
