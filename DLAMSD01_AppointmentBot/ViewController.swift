@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     @IBAction func sendButtonPressed(_ sender: Any) {
         let text = userInput.text ?? ""
         userInput.text = nil
-        respondeTo(question: text)
+        responde(to: text)
         sendButton.isEnabled = false
         userInput.resignFirstResponder()
     }
@@ -45,13 +45,13 @@ class ViewController: UIViewController, UITableViewDelegate {
         tableView.delegate = self
     }
     ///called when the user enters a question
-    func respondeTo(question text: String) {
+    func responde(to question: String) {
         //blocks new questions while the app is thinking
         isThinking = true
         sendButton.isEnabled = false
         //checks whether the count of messages changes before adding a new row
         let countBeforeAdding = conversationSource.messageCount
-        conversationSource.add(question: text)
+        conversationSource.add(question: question)
         let count = conversationSource.messageCount
         //holds the index of the new question, if conversationSource has responded
         var questionPath: IndexPath?
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate {
             //It's now OK to ask another question
             self.isThinking = false
             //Get an answer from the questionAnswerer
-            let answer = self.questionAnswerer.responseTo(question:  text)
+            let answer = self.questionAnswerer.chooseAnswertext(for: question)
             //As before, check that adding an answer actually increases the message count
             let countBefore = self.conversationSource.messageCount
             self.conversationSource.add(answer: answer)
@@ -101,7 +101,7 @@ extension ViewController: UITextFieldDelegate {
         // Clear out the text
         userInput.text = nil
         // Deal with the question
-        respondeTo(question: text)
+        responde(to: text)
         sendButton.isEnabled = false
         return false
     }

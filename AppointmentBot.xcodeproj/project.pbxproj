@@ -151,7 +151,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 43E9E8C828880D2300BF03B7 /* Build configuration list for PBXProject "DLAMSD01_AppointmentBot" */;
+			buildConfigurationList = 43E9E8C828880D2300BF03B7 /* Build configuration list for PBXProject "AppointmentBot" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		43E9E8C828880D2300BF03B7 /* Build configuration list for PBXProject "DLAMSD01_AppointmentBot" */ = {
+		43E9E8C828880D2300BF03B7 /* Build configuration list for PBXProject "AppointmentBot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				43E9E8DF28880D2400BF03B7 /* Debug */,

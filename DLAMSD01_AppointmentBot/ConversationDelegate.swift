@@ -20,10 +20,10 @@ class ConversationDelegate {
     }
     
     /// Creates an answer message in response to a question.
-    func responseTo(question: String) -> String {
+    func chooseAnswertext(for question: String) -> String {
         
         //review: argument label
-        if checkLanguage(question: question) != NLLanguage.english {
+        if checkLanguage(of: question) != NLLanguage.english {
             return "Please ask me in English. 🇬🇧"
         }else {
             let answerkey = generateAnswerkey(for: question)
@@ -48,7 +48,7 @@ class ConversationDelegate {
     }
     
     ///Checks the questions language
-    func checkLanguage(question: String) -> NLLanguage {
+    func checkLanguage(of question: String) -> NLLanguage {
         return NLLanguageRecognizer.dominantLanguage(for: question) ?? NLLanguage.undetermined
         
     }
